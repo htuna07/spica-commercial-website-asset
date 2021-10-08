@@ -222,7 +222,7 @@ spec:
 apiVersion: bucket/v1
 kind: Schema
 metadata:
-  name: company-team
+  name: company-team-bucket
 spec:
   title: Company-Team
   description: Describe your new bucket
@@ -595,7 +595,7 @@ spec:
 apiVersion: bucket/v1
 kind: Schema
 metadata:
-  name: reference
+  name: reference-bucket
 spec:
   title: Reference
   description: Reference
