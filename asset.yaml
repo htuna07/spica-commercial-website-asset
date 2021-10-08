@@ -1,0 +1,695 @@
+# BUCKET - Portfolio
+apiVersion: bucket/v1
+kind: Schema
+metadata:
+  name: portfolio-bucket
+spec:
+  title: Portfolio
+  description: Portfolip
+  icon: done
+  primary: name
+  readOnly: false
+  history: false
+  properties:
+    images:
+      type: array
+      title: images
+      description: Description of the images input
+      options:
+        position: bottom
+      items:
+        title: Title of the items
+        type: storage
+    name:
+      type: string
+      title: name
+      description: Description of the name input
+      options:
+        position: bottom
+    url:
+      type: string
+      title: url
+      description: Description of the url input
+      options:
+        position: bottom
+    date:
+      type: date
+      title: date
+      description: Description of the date input
+      options:
+        position: bottom
+      default: :created_at
+  acl:
+    write: true==true
+    read: true==true
+  order: 6
+---
+# BUCKET - Comments
+apiVersion: bucket/v1
+kind: Schema
+metadata:
+  name: comment-bucket
+spec:
+  title: Comment
+  description: Describe your new bucket
+  icon: question_answer
+  primary: username
+  readOnly: false
+  history: false
+  properties:
+    username:
+      type: string
+      title: username
+      description: Description of the username input
+      options:
+        position: bottom
+    title:
+      type: string
+      title: title
+      description: Description of the title input
+      options:
+        position: bottom
+    message:
+      type: textarea
+      title: message
+      description: Description of the message input
+      options:
+        position: bottom
+    rating:
+      type: number
+      title: rating
+      description: Description of the rating input
+      options:
+        position: bottom
+    date:
+      type: date
+      title: date
+      description: Description of the date input
+      options:
+        position: bottom
+      default: :created_at
+  acl:
+    write: true==true
+    read: true==true
+  order: 1
+---
+# BUCKET - About-Company
+apiVersion: bucket/v1
+kind: Schema
+metadata:
+  name: about-company-bucket
+spec:
+  title: About-Company
+  description: About-Company
+  icon: business
+  primary: name
+  readOnly: false
+  history: false
+  properties:
+    name:
+      type: string
+      title: name
+      description: Description of the name input
+      options:
+        position: bottom
+    mail:
+      type: string
+      title: mail
+      description: Description of the mail input
+      options:
+        position: bottom
+    phone:
+      type: string
+      title: phone
+      description: Description of the phone input
+      options:
+        position: bottom
+    location:
+      type: location
+      title: location
+      description: Description of the location input
+      options:
+        position: bottom
+      locationType: Point
+    presentation:
+      type: textarea
+      title: presentation
+      description: Description of the presentation input
+      options:
+        position: bottom
+    images:
+      type: array
+      title: images
+      description: Description of the images input
+      options:
+        position: bottom
+      items:
+        title: Title of the items
+        type: storage
+    social_medias:
+      type: array
+      title: social_medias
+      description: Description of the social_medias input
+      options:
+        position: bottom
+      items:
+        title: Title of the items
+        type: object
+        properties:
+          name:
+            type: string
+            title: name
+            description: Description of the name input
+            options:
+              position: bottom
+          url:
+            type: string
+            title: url
+            description: Description of the url input
+            options:
+              position: bottom
+    facts:
+      type: array
+      title: facts
+      description: Description of the facts input
+      options:
+        position: bottom
+      items:
+        title: Title of the items
+        type: object
+        properties:
+          name:
+            type: string
+            title: name
+            description: Description of the name input
+            options:
+              position: bottom
+          count:
+            type: number
+            title: count
+            description: Description of the count input
+            options:
+              position: bottom
+            minimum: 0
+    partners:
+      type: array
+      title: partners
+      description: Description of the partners input
+      options:
+        position: bottom
+      items:
+        title: Title of the items
+        type: object
+        properties:
+          logo:
+            type: storage
+            title: logo
+            description: Description of the logo input
+            options:
+              position: bottom
+          name:
+            type: string
+            title: name
+            description: Description of the name input
+            options:
+              position: bottom
+  acl:
+    write: true==true
+    read: true==true
+  order: 2
+---
+# BUCKET - Company-Team
+apiVersion: bucket/v1
+kind: Schema
+metadata:
+  name: company-team
+spec:
+  title: Company-Team
+  description: Describe your new bucket
+  icon: groups
+  primary: name
+  readOnly: false
+  history: false
+  properties:
+    profile_picture:
+      type: storage
+      title: profile_picture
+      description: Description of the profile_picture input
+      options:
+        position: bottom
+    name:
+      type: string
+      title: name
+      description: Description of the name input
+      options:
+        position: bottom
+    position:
+      type: string
+      title: position
+      description: Description of the position input
+      options:
+        position: bottom
+  acl:
+    write: true==true
+    read: true==true
+  order: 3
+---
+# BUCKET - About-Me
+apiVersion: bucket/v1
+kind: Schema
+metadata:
+  name: about-me-bucket
+spec:
+  title: About-Me
+  description: About me
+  icon: account_circle
+  primary: name
+  readOnly: false
+  history: false
+  properties:
+    name:
+      type: string
+      title: name
+      description: Description of the name input
+      options:
+        position: bottom
+    surname:
+      type: string
+      title: surname
+      description: Description of the surname input
+      options:
+        position: bottom
+    mail:
+      type: string
+      title: mail
+      description: Description of the mail input
+      options:
+        position: bottom
+    birthday:
+      type: date
+      title: birthday
+      description: Description of the birthday input
+      options:
+        position: bottom
+    jobs:
+      type: array
+      title: jobs
+      description: Description of the jobs input
+      options:
+        position: bottom
+      items:
+        title: Title of the items
+        type: string
+    phone:
+      type: string
+      title: phone
+      description: Description of the phone input
+      options:
+        position: bottom
+    skills:
+      type: array
+      title: skills
+      description: Description of the skills input
+      options:
+        position: bottom
+      items:
+        title: Title of the items
+        type: object
+        properties:
+          name:
+            type: string
+            title: name
+            description: Description of the name input
+            options:
+              position: bottom
+          percent:
+            type: number
+            title: percent
+            description: Description of the percent input
+            options:
+              position: bottom
+            maximum: 100
+            minimum: 0
+    bio:
+      type: textarea
+      title: bio
+      description: Description of the bio input
+      options:
+        position: bottom
+    annen:
+      type: array
+      title: images
+      description: Description of the annen input
+      options:
+        position: bottom
+      items:
+        title: Title of the items
+        type: storage
+    location:
+      type: location
+      title: location
+      description: Description of the location input
+      options:
+        position: bottom
+      locationType: Point
+    facts:
+      type: array
+      title: facts
+      description: Description of the facts input
+      options:
+        position: bottom
+      items:
+        title: Title of the items
+        type: object
+        properties:
+          name:
+            type: string
+            title: name
+            description: Description of the name input
+            options:
+              position: bottom
+          count:
+            type: number
+            title: count
+            description: Description of the count input
+            options:
+              position: bottom
+            minimum: 0
+    resume:
+      type: array
+      title: resume
+      description: Description of the resume input
+      options:
+        position: bottom
+      items:
+        title: Title of the items
+        type: object
+        properties:
+          category:
+            type: string
+            title: name
+            description: Description of the category input
+            options:
+              position: bottom
+          resume_in:
+            type: array
+            title: resume_in
+            description: Description of the resume_in input
+            options:
+              position: bottom
+            items:
+              title: Title of the items
+              type: object
+              properties:
+                position:
+                  type: string
+                  title: position
+                  description: Description of the position input
+                  options:
+                    position: bottom
+                description:
+                  type: textarea
+                  title: description
+                  description: Description of the description input
+                  options:
+                    position: bottom
+                years:
+                  type: string
+                  title: years
+                  description: Description of the years input
+                  options:
+                    position: bottom
+  acl:
+    write: true==true
+    read: true==true
+  order: 4
+---
+# BUCKET - Services
+apiVersion: bucket/v1
+kind: Schema
+metadata:
+  name: service-bucket
+spec:
+  title: Service
+  description: Service
+  icon: cases
+  primary: name
+  readOnly: false
+  history: false
+  properties:
+    image:
+      type: storage
+      title: image
+      description: Description of the image input
+      options:
+        position: bottom
+    name:
+      type: string
+      title: name
+      description: Description of the name input
+      options:
+        position: bottom
+    description:
+      type: textarea
+      title: description
+      description: Description of the description input
+      options:
+        position: bottom
+    features:
+      type: array
+      title: features
+      description: Description of the features input
+      options:
+        position: bottom
+      items:
+        title: Title of the items
+        type: object
+        properties:
+          image:
+            type: storage
+            title: image
+            description: Description of the image input
+            options:
+              position: bottom
+          title:
+            type: string
+            title: title
+            description: Description of the title input
+            options:
+              position: bottom
+          description:
+            type: textarea
+            title: description
+            description: Description of the description input
+            options:
+              position: bottom
+  acl:
+    write: true==true
+    read: true==true
+  order: 5
+---
+# BUCKET - Portfolio
+apiVersion: bucket/v1
+kind: Schema
+metadata:
+  name: portfolio-bucket
+spec:
+  title: Portfolio
+  description: Portfolio
+  icon: done
+  primary: name
+  readOnly: false
+  history: false
+  properties:
+    images:
+      type: array
+      title: images
+      description: Description of the images input
+      options:
+        position: bottom
+      items:
+        title: Title of the items
+        type: storage
+    name:
+      type: string
+      title: name
+      description: Description of the name input
+      options:
+        position: bottom
+    service:
+      type: relation
+      title: service
+      description: Description of the service input
+      options:
+        position: bottom
+      relationType: onetomany
+      dependent: false
+      bucket:
+        resourceFieldRef:
+          schemaName: service-bucket
+    url:
+      type: string
+      title: url
+      description: Description of the url input
+      options:
+        position: bottom
+    date:
+      type: date
+      title: date
+      description: Description of the date input
+      options:
+        position: bottom
+      default: :created_at
+  acl:
+    write: true==true
+    read: true==true
+  order: 6
+---
+# BUCKET - Blog
+apiVersion: bucket/v1
+kind: Schema
+metadata:
+  name: blog-bucket
+spec:
+  title: Blog
+  description: Blog
+  icon: article
+  primary: title
+  readOnly: false
+  history: false
+  properties:
+    images:
+      type: array
+      title: images
+      description: Description of the images input
+      options:
+        position: bottom
+      items:
+        title: Title of the items
+        type: storage
+    title:
+      type: string
+      title: title
+      description: Description of the title input
+      options:
+        position: bottom
+    content:
+      type: textarea
+      title: content
+      description: Description of the content input
+      options:
+        position: bottom
+    date:
+      type: date
+      title: date
+      description: Description of the date input
+      options:
+        position: bottom
+      default: :created_at
+  acl:
+    write: true==true
+    read: true==true
+  order: 7
+---
+# BUCKET - Reference
+apiVersion: bucket/v1
+kind: Schema
+metadata:
+  name: reference
+spec:
+  title: Reference
+  description: Reference
+  icon: reviews
+  primary: name
+  readOnly: false
+  history: false
+  properties:
+    profile_picture:
+      type: storage
+      title: profile_picture
+      description: Description of the profile_picture input
+      options:
+        position: bottom
+    name:
+      type: string
+      title: name
+      description: Description of the name input
+      options:
+        position: bottom
+    message:
+      type: textarea
+      title: message
+      description: Description of the message input
+      options:
+        position: bottom
+    company:
+      type: string
+      title: company
+      description: Description of the company input
+      options:
+        position: bottom
+    position:
+      type: string
+      title: position
+      description: Description of the position input
+      options:
+        position: bottom
+  acl:
+    write: true==true
+    read: true==true
+  order: 8
+---
+# BUCKET - Contact
+apiVersion: bucket/v1
+kind: Schema
+metadata:
+  name: contact-bucket
+spec:
+  title: Contact
+  description: Contact
+  icon: contact_mail
+  primary: name
+  readOnly: false
+  history: false
+  properties:
+    name:
+      type: string
+      title: name
+      description: Description of the name input
+      options:
+        position: bottom
+    mail:
+      type: string
+      title: mail
+      description: Description of the mail input
+      options:
+        position: bottom
+    phone:
+      type: string
+      title: phone
+      description: Description of the phone input
+      options:
+        position: bottom
+    message:
+      type: textarea
+      title: message
+      description: Description of the message input
+      options:
+        position: bottom
+    date:
+      type: date
+      title: date
+      description: Description of the date input
+      options:
+        position: bottom
+      default: :created_at
+    answer:
+      type: string
+      title: answer
+      description: Description of the answer input
+      options:
+        position: bottom
+  acl:
+    write: true==true
+    read: true==true
+  order: 9
