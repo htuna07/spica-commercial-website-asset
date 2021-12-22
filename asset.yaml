@@ -1,58 +1,12 @@
-# BUCKET - Portfolio
-apiVersion: bucket/v1
-kind: Schema
-metadata:
-  name: portfolio-bucket
-spec:
-  title: Portfolio
-  description: Portfolip
-  icon: done
-  primary: name
-  readOnly: false
-  history: false
-  properties:
-    images:
-      type: array
-      title: images
-      description: Description of the images input
-      options:
-        position: bottom
-      items:
-        title: Title of the items
-        type: storage
-    name:
-      type: string
-      title: name
-      description: Description of the name input
-      options:
-        position: bottom
-    url:
-      type: string
-      title: url
-      description: Description of the url input
-      options:
-        position: bottom
-    date:
-      type: date
-      title: date
-      description: Description of the date input
-      options:
-        position: bottom
-      default: :created_at
-  acl:
-    write: true==true
-    read: true==true
-  order: 6
----
 # BUCKET - Comments
 apiVersion: bucket/v1
 kind: Schema
 metadata:
-  name: comment-bucket
+  name: spica-portfolio-asset-comment-bucket
 spec:
   title: Comment
   description: Describe your new bucket
-  icon: question_answer
+  icon: assignment_ind
   primary: username
   readOnly: false
   history: false
@@ -97,11 +51,11 @@ spec:
 apiVersion: bucket/v1
 kind: Schema
 metadata:
-  name: about-company-bucket
+  name: spica-portfolio-asset-about-company-bucket
 spec:
   title: About-Company
   description: About-Company
-  icon: business
+  icon: assignment_ind
   primary: name
   readOnly: false
   history: false
@@ -168,6 +122,24 @@ spec:
             description: Description of the url input
             options:
               position: bottom
+    about_facts:
+      type: string
+      title: about_facts
+      description: Description of the about_facts input
+      options:
+        position: bottom
+    about_portfolio:
+      type: string
+      title: about_portfolio
+      description: Description of the about_portfolio input
+      options:
+        position: bottom
+    about_services:
+      type: string
+      title: about_services
+      description: Description of the about_services input
+      options:
+        position: bottom
     facts:
       type: array
       title: facts
@@ -191,6 +163,28 @@ spec:
             options:
               position: bottom
             minimum: 0
+    socical_media:
+      type: array
+      title: socical_media
+      description: Description of the socical_media input
+      options:
+        position: bottom
+      items:
+        title: Title of the items
+        type: object
+        properties:
+          name:
+            type: string
+            title: name
+            description: Description of the name input
+            options:
+              position: bottom
+          count:
+            type: string
+            title: link
+            description: Description of the link input
+            options:
+              position: bottom
     partners:
       type: array
       title: partners
@@ -222,11 +216,11 @@ spec:
 apiVersion: bucket/v1
 kind: Schema
 metadata:
-  name: company-team-bucket
+  name: spica-portfolio-asset-company-team-bucket
 spec:
   title: Company-Team
   description: Describe your new bucket
-  icon: groups
+  icon: assignment_ind
   primary: name
   readOnly: false
   history: false
@@ -258,11 +252,11 @@ spec:
 apiVersion: bucket/v1
 kind: Schema
 metadata:
-  name: about-me-bucket
+  name: spica-portfolio-asset-about-me-bucket
 spec:
   title: About-Me
   description: About me
-  icon: account_circle
+  icon: assignment_ind
   primary: name
   readOnly: false
   history: false
@@ -336,10 +330,10 @@ spec:
       description: Description of the bio input
       options:
         position: bottom
-    annen:
+    images:
       type: array
       title: images
-      description: Description of the annen input
+      description: Description of the images input
       options:
         position: bottom
       items:
@@ -375,6 +369,46 @@ spec:
             options:
               position: bottom
             minimum: 0
+    social_medias:
+      type: array
+      title: social_medias
+      description: Description of the social_medias input
+      options:
+        position: bottom
+      items:
+        title: Title of the items
+        type: object
+        properties:
+          name:
+            type: string
+            title: name
+            description: Description of the name input
+            options:
+              position: bottom
+          url:
+            type: string
+            title: url
+            description: Description of the url input
+            options:
+              position: bottom
+    about_facts:
+      type: string
+      title: about_facts
+      description: Description of the about_facts input
+      options:
+        position: bottom
+    about_portfolio:
+      type: string
+      title: about_portfolio
+      description: Description of the about_portfolio input
+      options:
+        position: bottom
+    about_services:
+      type: string
+      title: about_services
+      description: Description of the about_services input
+      options:
+        position: bottom
     resume:
       type: array
       title: resume
@@ -428,11 +462,11 @@ spec:
 apiVersion: bucket/v1
 kind: Schema
 metadata:
-  name: service-bucket
+  name: spica-portfolio-asset-service-bucket
 spec:
   title: Service
   description: Service
-  icon: cases
+  icon: assignment_ind
   primary: name
   readOnly: false
   history: false
@@ -492,24 +526,21 @@ spec:
 apiVersion: bucket/v1
 kind: Schema
 metadata:
-  name: portfolio-bucket
+  name: spica-portfolio-asset-portfolio-bucket
 spec:
   title: Portfolio
   description: Portfolio
-  icon: done
+  icon: assignment_ind
   primary: name
   readOnly: false
   history: false
   properties:
     images:
-      type: array
-      title: images
+      type: storage
+      title: image
       description: Description of the images input
       options:
         position: bottom
-      items:
-        title: Title of the items
-        type: storage
     name:
       type: string
       title: name
@@ -526,7 +557,7 @@ spec:
       dependent: false
       bucket:
         resourceFieldRef:
-          schemaName: service-bucket
+          schemaName: spica-portfolio-asset-service-bucket
     url:
       type: string
       title: url
@@ -549,11 +580,11 @@ spec:
 apiVersion: bucket/v1
 kind: Schema
 metadata:
-  name: blog-bucket
+  name: spica-portfolio-asset-blog-bucket
 spec:
   title: Blog
   description: Blog
-  icon: article
+  icon: assignment_ind
   primary: title
   readOnly: false
   history: false
@@ -595,11 +626,11 @@ spec:
 apiVersion: bucket/v1
 kind: Schema
 metadata:
-  name: reference-bucket
+  name: spica-portfolio-asset-reference-bucket
 spec:
   title: Reference
   description: Reference
-  icon: reviews
+  icon: assignment_ind
   primary: name
   readOnly: false
   history: false
@@ -643,11 +674,11 @@ spec:
 apiVersion: bucket/v1
 kind: Schema
 metadata:
-  name: contact-bucket
+  name: spica-portfolio-asset-contact-bucket
 spec:
   title: Contact
   description: Contact
-  icon: contact_mail
+  icon: assignment_ind
   primary: name
   readOnly: false
   history: false
